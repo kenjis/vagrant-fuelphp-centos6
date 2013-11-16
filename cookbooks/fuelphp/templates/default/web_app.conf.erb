@@ -1,0 +1,10 @@
+<VirtualHost *:80>
+  DocumentRoot /mnt/fuelphp/public
+  <Directory /mnt/fuelphp>
+    Options FollowSymLinks Indexes
+    AllowOverride all
+    EnableMMAP Off 
+    EnableSendfile Off
+  </Directory>
+</VirtualHost>
+
