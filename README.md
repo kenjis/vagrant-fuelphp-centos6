@@ -20,9 +20,10 @@ Some of the following are including using Chef Opscode repositories.
 
 * PHP 5.4
 * Apache 2.2
+  * vhost setup for your project
 * MySQL 5.1
   * **fuel_dev** and **fuel_test** databases
-* vhost setup for your project
+* phpMyAdmin 3.5
 
 ## Suggesting Setup & Layout
 

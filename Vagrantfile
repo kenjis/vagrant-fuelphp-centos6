@@ -63,6 +63,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
      chef.add_recipe "yum::ius"
      chef.add_recipe "php54"
      chef.add_recipe "mysql::server"
+     chef.add_recipe "phpmyadmin"
      chef.add_recipe "fuelphp"
  
   #   # You may also specify custom JSON attributes:
