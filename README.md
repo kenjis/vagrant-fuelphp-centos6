@@ -1,5 +1,7 @@
 # FuelPHP Vagrant Development setup (CentOS6)
 
+[日本語](README.ja.md)
+
 This project sets up a CentOS 6.4 (64bit) virtual machine to run your FuelPHP project in.  It mounts your fuelphp project directory so that you can use your favorite editors to work.
 
 ## Requirements
