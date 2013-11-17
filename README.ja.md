@@ -1,18 +1,17 @@
 # FuelPHP Vagrant Development setup (CentOS6)
 
-このプロジェクトは、あなたのFuelPHPプロジェクトを含むCentOS 6.4 (64bit)仮想マシンをセットアップします。FuelPHPプロジェクトのディレクトリを仮想マシンからマウントするため、ホスト側でお好みのエディタを使って作業できます。
+このプロジェクトは、あなたのFuelPHPプロジェクトを含むCentOS 6.4 (64bit) 仮想マシンをセットアップします。FuelPHPプロジェクトのディレクトリを仮想マシンからマウントするため、ホスト側でお好みのエディタを使って作業できます。
 
-## 要件
+## 必要なソフトウェア
 
 * VirtualBox - フリーな仮想化ソフトウェア [ダウンロード](https://www.virtualbox.org/wiki/Downloads)
 * Vagrant **1.3+** - VirtualBoxのイメージを操作するツール [ダウンロード](http://downloads.vagrantup.com/)
 * Git - バージョン管理システム [ダウンロード](http://git-scm.com/downloads)
 
-### テストされたバージョン
+### テストされた環境
 
-* VirtualBox 4.2.18
-* Vagrant 1.3.5
-* Git 1.7.9.5
+* Ubuntu 12.04 - VirtualBox 4.2.18 & Vagrant 1.3.5 & Git 1.7.9.5
+* Mac OS X 10.8.5 - VirtualBox 4.3.2 & Vagrant 1.3.5 & Git 1.8.4.1
 
 ## この開発環境に含まれるもの
 
@@ -45,15 +44,15 @@ vagrant-fuelphp-centos6をあなたのプロジェクトに追加します:
 
 * **ブラウザ(ポート転送)**: [http://localhost:8000](http://localhost:8000)
 * **ブラウザ(IPアドレス直接)**: [http://192.168.33.33](http://192.168.33.33)
-* **MySQL**: mysql:host=192.168.33.33;dbname=fuel_dev (rootユーザのpasswordはVagrantfileに記載されています)
+* **MySQL**: mysql:host=192.168.33.33;dbname=fuel_dev (rootユーザのpasswordはVagrantfileに設定されています)
 
 ### Vagrant
 
 よく使うコマンド:
 
 * `vagrant up` 仮想マシンを起動しプロビジョンします
-* `vagrant suspend` 起動状態の仮想マシンを保存して停止します
-* `vagrant halt` 仮想マシンを停止します
+* `vagrant suspend` 仮想マシンの状態を保存して停止します
+* `vagrant halt` 仮想マシンを停止 (シャットダウン) します
 * `vagrant ssh` 仮想マシンへのSSHアクセスを提供します
 
 もっと知りたい場合は、http://docs.vagrantup.com/v2/
