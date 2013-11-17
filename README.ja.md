@@ -1,6 +1,6 @@
 # FuelPHP Vagrant Development setup (CentOS6)
 
-このプロジェクトは、あなたのFuelPHPプロジェクトを含むCentOS 6.4 (64bit)仮想マシンをセットアップします。FuelPHPプロジェクトのディレクトリをマウントするため、お好みのエディタで作業できます。
+このプロジェクトは、あなたのFuelPHPプロジェクトを含むCentOS 6.4 (64bit)仮想マシンをセットアップします。FuelPHPプロジェクトのディレクトリを仮想マシンからマウントするため、ホスト側でお好みのエディタを使って作業できます。
 
 ## 要件
 
@@ -20,9 +20,9 @@
 
 * PHP 5.4
 * Apache 2.2
-  * vhost setup for your project
+  * FuelPHPプロジェクト用のバーチャルホスト設定
 * MySQL 5.1
-  * **fuel_dev** and **fuel_test** databases
+  * データベース **fuel_dev** および **fuel_test**
 * phpMyAdmin 3.5
 
 ## 推奨されるセットアップ方法とディレクトリ構成
