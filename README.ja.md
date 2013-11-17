@@ -43,9 +43,9 @@ vagrant-fuelphp-centos6をあなたのプロジェクトに追加します:
 
 ## FuelPHPプロジェクトへのアクセス方法
 
-* **Browser**: [http://localhost:8000](http://localhost:8000)
-* **Browser by IP**: [http://192.168.33.33](http://192.168.33.33)
-* **Mysql**: mysql:host=192.168.33.33;dbname=fuel_dev (rootユーザのpasswordはVagrantfileに記載されています)
+* **ブラウザ(ポート転送)**: [http://localhost:8000](http://localhost:8000)
+* **ブラウザ(IPアドレス直接)**: [http://192.168.33.33](http://192.168.33.33)
+* **MySQL**: mysql:host=192.168.33.33;dbname=fuel_dev (rootユーザのpasswordはVagrantfileに記載されています)
 
 ### Vagrant
 

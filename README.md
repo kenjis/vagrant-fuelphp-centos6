@@ -45,9 +45,9 @@ Setup your directories something like this:
 
 ## Accessing your project
 
-* **Browser**: [http://localhost:8000](http://localhost:8000)
-* **Browser by IP**: [http://192.168.33.33](http://192.168.33.33)
-* **Mysql**: mysql:host=192.168.33.33;dbname=fuel_dev (root user password is set in the Vagrantfile)
+* **Browser by Port Forwarding**: [http://localhost:8000](http://localhost:8000)
+* **Browser by IP Address**: [http://192.168.33.33](http://192.168.33.33)
+* **MySQL**: mysql:host=192.168.33.33;dbname=fuel_dev (root user password is set in the Vagrantfile)
 
 ### Vagrant
 
