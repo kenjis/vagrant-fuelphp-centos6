@@ -68,3 +68,8 @@ end
 link "/home/vagrant/fuelphp" do
   to "/mnt/fuelphp"
 end
+
+execute "yum update" do
+  user "root"
+  command "yum -y update"
+end
