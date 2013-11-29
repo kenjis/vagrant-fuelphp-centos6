@@ -39,6 +39,23 @@ template "/etc/httpd/conf.d/fuelphp.conf" do
   notifies :restart, "service[httpd]"
 end
 
+# install git
+yum_package "git" do
+  action :install
+end
+
+# install oil command
+execute "install fuelphp oil command" do
+  command "curl get.fuelphp.com/oil | sh"
+  user "root"
+end
+
+# install phpunit
+execute "install phpunit" do
+  command "pear config-set auto_discover 1 && pear install pear.phpunit.de/PHPUnit-3.7.28"
+  user "root"
+end
+
 # create the databases
 node[:db].each do |name|
   execute "create database #{name}" do
