@@ -26,6 +26,9 @@ Some of the following are including using Chef Opscode repositories.
   * **fuel_dev** and **fuel_test** databases
 * phpMyAdmin 3.5
 
+* PHPUnit 3.7.28
+* git 1.7.1
+
 ## Suggesting Setup & Layout
 
 Add this vagrant-fuelphp-centos6 to your project:
