@@ -54,6 +54,7 @@ end
 execute "install phpunit" do
   command "pear config-set auto_discover 1 && pear install pear.phpunit.de/PHPUnit-3.7.28"
   user "root"
+  not_if { File.exists?("/usr/bin/phpunit") }
 end
 
 # create the databases
@@ -73,3 +74,10 @@ end
 #  user "root"
 #  command "yum -y update"
 #end
+
+# install FuelPHP if not exists
+execute "install fuelphp" do
+  command "cd /home/vagrant && oil create fuel.tmp && mv fuel.tmp/* fuelphp && mv fuel.tmp/.git* fuelphp && rmdir fuel.tmp"
+  user "vagrant"
+  not_if { File.exists?("/home/vagrant/fuelphp/oil") }
+end
