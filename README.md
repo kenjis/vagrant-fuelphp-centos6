@@ -25,9 +25,8 @@ Some of the following are including using Chef Opscode repositories.
 * MySQL 5.1
   * **fuel_dev** and **fuel_test** databases
 * phpMyAdmin 3.5
-
 * PHPUnit 3.7.28
-* git 1.7.1
+* Git 1.7.1
 
 ## Suggesting Setup & Layout
 
