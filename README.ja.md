@@ -5,7 +5,7 @@
 ## 必要なソフトウェア
 
 * VirtualBox - フリーな仮想化ソフトウェア [ダウンロード](https://www.virtualbox.org/wiki/Downloads)
-* Vagrant **1.3+** - VirtualBoxのイメージを操作するツール [ダウンロード](http://downloads.vagrantup.com/)
+* Vagrant 1.3+ - VirtualBoxのイメージを操作するツール [ダウンロード](http://downloads.vagrantup.com/)
 * Git - バージョン管理システム [ダウンロード](http://git-scm.com/downloads)
 
 ### テストされた環境

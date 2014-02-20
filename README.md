@@ -2,12 +2,12 @@
 
 [日本語](README.ja.md)
 
-This project sets up a CentOS 6.4 (64bit) virtual machine to run your FuelPHP project in.  It mounts your fuelphp project directory so that you can use your favorite editors to work.
+This project sets up a CentOS 6.4 (64bit) virtual machine to run your FuelPHP project in.  It mounts your FuelPHP project directory so that you can use your favorite editors to work.
 
 ## Requirements
 
 * VirtualBox - Free virtualization software [Download Virtualbox](https://www.virtualbox.org/wiki/Downloads)
-* Vagrant **1.3+** - Tool for working with VirtualBox images [Download Vagrant](http://downloads.vagrantup.com/)
+* Vagrant 1.3+ - Tool for working with VirtualBox images [Download Vagrant](http://downloads.vagrantup.com/)
 * Git - Version control system [Download Git](http://git-scm.com/downloads)
 
 ### Tested
