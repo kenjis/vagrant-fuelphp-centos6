@@ -52,7 +52,7 @@ end
 
 # install phpunit
 execute "install phpunit" do
-  command "pear config-set auto_discover 1 && pear install pear.phpunit.de/PHPUnit-3.7.28"
+  command "wget https://phar.phpunit.de/phpunit.phar && chmod +x phpunit.phar && mv phpunit.phar /usr/local/bin/phpunit"
   user "root"
   not_if { File.exists?("/usr/bin/phpunit") }
 end
