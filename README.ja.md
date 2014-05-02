@@ -10,7 +10,7 @@
 
 ### テストされた環境
 
-* Ubuntu 12.04 - VirtualBox 4.2.18 & Vagrant 1.3.5 & Git 1.7.9.5
+* Ubuntu 12.04 - VirtualBox 4.2.18 & Vagrant 1.5.0 & Git 1.7.9.5
 * Mac OS X 10.8.5 - VirtualBox 4.3.2 & Vagrant 1.3.5 & Git 1.8.4.1
 
 ## この開発環境に含まれるもの
