@@ -80,7 +80,7 @@ end
 # set composer path
 execute "set global composer bin path" do
   command <<-EOL
-    sed -i -e '/\/.composer\/vendor\/bin:/d' /home/vagrant/.bash_profile
+    sed -i -e '/\.composer/d' /home/vagrant/.bash_profile
     sed -i -e '/export PATH/d' /home/vagrant/.bash_profile
     echo 'PATH="$HOME/.composer/vendor/bin:$PATH"' >>/home/vagrant/.bash_profile
     echo 'export PATH' >>/home/vagrant/.bash_profile
