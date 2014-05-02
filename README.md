@@ -19,7 +19,7 @@ This project sets up a CentOS 6.5 (64bit) virtual machine to run your FuelPHP pr
 
 Some of the following are including using Chef Opscode repositories.
 
-* PHP 5.4
+* PHP 5.5
 * Apache 2.2
   * vhost setup for your project
 * MySQL 5.1

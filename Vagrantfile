@@ -62,7 +62,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :chef_solo do |chef|
      chef.cookbooks_path = "./cookbooks"
      chef.add_recipe "yum::ius"
-     chef.add_recipe "php54"
+     chef.add_recipe "php55"
+     #chef.add_recipe "php54"
      chef.add_recipe "mysql::server"
      chef.add_recipe "phpmyadmin"
      chef.add_recipe "fuelphp"

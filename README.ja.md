@@ -17,7 +17,7 @@
 
 以下のいくつかは、Chef Opscodeリポジトリを使ってインストールされます。
 
-* PHP 5.4
+* PHP 5.5
 * Apache 2.2
   * FuelPHPプロジェクト用のバーチャルホスト設定
 * MySQL 5.1
