@@ -50,11 +50,42 @@ execute "install fuelphp oil command" do
   user "root"
 end
 
+# install composer
+execute "install composer" do
+  command <<-EOH
+    curl -sS https://getcomposer.org/installer | php
+    mv composer.phar /usr/local/bin/composer
+    chown vagrant.vagrant /usr/local/bin/composer
+  EOH
+  user "root"
+  not_if { File.exists?("/usr/local/bin/composer") }
+end
+
 # install phpunit
 execute "install phpunit" do
-  command "pear config-set auto_discover 1 && pear install pear.phpunit.de/PHPUnit-3.7.28"
-  user "root"
-  not_if { File.exists?("/usr/bin/phpunit") }
+  # FIXME
+  # command "composer global require 'phpunit/phpunit=3.7.*'"
+  # does not work. The below error occurs.
+  #   STDERR: [ErrorException]
+  #   chdir(): No such file or directory (errno 2)
+  command <<-EOL
+    mkdir -p /home/vagrant/.composer
+    cd /home/vagrant/.composer
+    composer require 'phpunit/phpunit=3.7.*'
+  EOL
+  user "vagrant"
+  not_if { File.exists?("/home/vagrant/.composer/vendor/bin/phpunit") }
+end
+
+# set composer path
+execute "set global composer bin path" do
+  command <<-EOL
+    sed -i -e '/\/.composer\/vendor\/bin:/d' /home/vagrant/.bash_profile
+    sed -i -e '/export PATH/d' /home/vagrant/.bash_profile
+    echo 'PATH="$HOME/.composer/vendor/bin:$PATH"' >>/home/vagrant/.bash_profile
+    echo 'export PATH' >>/home/vagrant/.bash_profile
+  EOL
+  user "vagrant"
 end
 
 # create the databases

@@ -23,7 +23,7 @@
 * MySQL 5.1
   * データベース **fuel_dev** および **fuel_test**
 * phpMyAdmin 3.5
-* PHPUnit 3.7.28
+* PHPUnit 3.7
 * Git 1.7.1
 
 ## 推奨されるセットアップ方法とディレクトリ構成
