@@ -29,7 +29,7 @@ execute "remove php54 packages" do
   command "yum -y erase php54-*"
 end
 
-%w(php55u php55u-mbstring php55u-gd php55u-mcrypt php55u-mysqlnd php55u-pear php55u-xml php55u-pecl-xdebug php55u-opcache).each do |package|
+%w(php55u php55u-mbstring php55u-gd php55u-mcrypt php55u-mysqlnd php55u-pear php55u-xml php55u-pecl-xdebug php55u-opcache php55u-pecl-jsonc).each do |package|
   yum_package package do
     action :install
   end
