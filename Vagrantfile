@@ -73,7 +73,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
  
   #   # You may also specify custom JSON attributes:
      chef.json = {
-        "php54" => {
+        "php55" => {
             "date.timezone" => "Asia/Tokyo"
         },
         "mysql" => {
