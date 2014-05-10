@@ -44,6 +44,10 @@ yum_package "git" do
   action :install
 end
 
+yum_package "bash-completion" do
+  action :install
+end
+
 # install oil command
 execute "install fuelphp oil command" do
   command "curl get.fuelphp.com/oil | sh"
