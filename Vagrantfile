@@ -37,9 +37,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Mount the parent directory at /mnt/fuelphp
   config.vm.synced_folder "../", "/mnt/fuelphp",
-    :owner => "vagrant",
-    :group => "apache",
-    :mount_options => ["dmode=775,fmode=664"]
+    :owner => "vagrant", :group => "vagrant",
+    :mount_options => ["dmode=777,fmode=666"]
   # Speed up with NFS. nfsd is needed on Host OS
   #config.vm.synced_folder "../", "/mnt/fuelphp", :nfs => true
 
@@ -64,9 +63,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #
   config.vm.provision :chef_solo do |chef|
      chef.cookbooks_path = "./cookbooks"
+
+     # PHP 5.5 for production
      chef.add_recipe "yum::ius"
      chef.add_recipe "php55"
      #chef.add_recipe "php54"
+
+     # PHP 5.6 for testing
+     #chef.add_recipe "yum-remi"
+     #chef.add_recipe "php56-remi"
+
      chef.add_recipe "mysql::server"
      chef.add_recipe "phpmyadmin"
      chef.add_recipe "fuelphp"

@@ -24,6 +24,14 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
+execute "remove php packages" do
+  user "root"
+  command <<-EOL
+    yum -y erase php-*
+    yum -y erase php55-*
+  EOL
+end
+
 %w(php54 php54-mbstring php54-gd php54-mcrypt php54-mysqlnd php54-pear php54-xml php54-pecl-xdebug).each do |package|
   yum_package package do
     action :install
