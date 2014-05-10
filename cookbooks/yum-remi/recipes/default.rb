@@ -24,6 +24,15 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
+execute "install epel-release rpm" do
+  user "root"
+  command <<-EOL
+    wget http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+    rpm -Uvh epel-release-6*.rpm
+  EOL
+  not_if "rpm -qa | grep epel-release"
+end
+
 execute "install remi-release rpm" do
   user "root"
   command <<-EOL
