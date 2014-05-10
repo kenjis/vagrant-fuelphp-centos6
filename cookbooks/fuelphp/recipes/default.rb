@@ -101,19 +101,23 @@ link "/home/vagrant/fuelphp" do
   to "/mnt/fuelphp"
 end
 
-# remount /mnt/fuelphp for changing gid
-template "/etc/rc.d/rc.local" do
-  source "rc.local.erb"
+# install script to remount /mnt/fuelphp for changing gid
+template "/etc/init.d/remount-mnt-fuelphp" do
+  source "remount-mnt-fuelphp.erb"
   mode "0755"
+end
+
+# install upstart conf file to run /etc/init.d/remount-mnt-fuelphp
+template "/etc/init/remount-mnt-fuelphp.conf" do
+  source "remount-mnt-fuelphp.conf.erb"
+  mode "0644"
 end
 
 # remount /mnt/fuelphp
 execute "remount /mnt/fuelphp for changing permission" do
   command <<-EOL
-    umount /mnt/fuelphp
-    mount -t vboxsf -o uid=`id -u vagrant`,gid=`getent group apache | cut -d: -f3`,dmode=775,fmode=664 /mnt/fuelphp /mnt/fuelphp
+    /etc/init.d/remount-mnt-fuelphp
   EOL
-  only_if "mount | grep vboxsf | grep -q fuelphp"
   user "root"
 end
 

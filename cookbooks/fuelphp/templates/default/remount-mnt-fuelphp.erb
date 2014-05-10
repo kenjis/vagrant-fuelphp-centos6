@@ -1,0 +1,9 @@
+#/bin/sh
+
+# remount /mnt/fuelphp for changing gid
+mount | grep vboxsf | grep -q fuelphp
+if [ $? -eq "0" ]; then
+  umount /mnt/fuelphp
+  mount -t vboxsf -o uid=`id -u vagrant`,gid=`getent group apache | cut -d: -f3`,dmode=775,fmode=664 /mnt/fuelphp /mnt/fuelphp
+fi
+
