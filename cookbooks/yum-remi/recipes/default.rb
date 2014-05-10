@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: php54
+# Cookbook Name:: yum-remi
 # Recipe:: default
 #
-# Copyright 2013, Kenji Suzuki <https://github.com/kenjis>
+# Copyright 2014, Kenji Suzuki <https://github.com/kenjis>
 #
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
@@ -24,28 +24,11 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
-execute "remove php packages" do
+execute "install remi-release rpm" do
   user "root"
   command <<-EOL
-    yum -y erase php-*
-    yum -y erase php55u-*
+    wget http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+    rpm -Uvh remi-release-6*.rpm
   EOL
-end
-
-%w(php54 php54-mbstring php54-gd php54-mcrypt php54-mysqlnd php54-pear php54-xml php54-pecl-xdebug).each do |package|
-  yum_package package do
-    action :install
-  end
-end
-
-template "/etc/php.ini" do
-  source "php.ini.erb"
-  mode "0644"
-  notifies :restart, "service[httpd]"
-end
-
-template "/etc/php.d/xdebug.ini" do
-  source "xdebug.ini.erb"
-  mode "0644"
-  notifies :restart, "service[httpd]"
+  not_if "rpm -qa | grep remi-release"
 end

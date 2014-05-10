@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: php54
+# Cookbook Name:: php56-remi
 # Recipe:: default
 #
-# Copyright 2013, Kenji Suzuki <https://github.com/kenjis>
+# Copyright 2014, Kenji Suzuki <https://github.com/kenjis>
 #
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
@@ -27,15 +27,14 @@
 execute "remove php packages" do
   user "root"
   command <<-EOL
-    yum -y erase php-*
+    yum -y erase php54-*
     yum -y erase php55u-*
   EOL
 end
 
-%w(php54 php54-mbstring php54-gd php54-mcrypt php54-mysqlnd php54-pear php54-xml php54-pecl-xdebug).each do |package|
-  yum_package package do
-    action :install
-  end
+execute "install php56-remi" do
+  user "root"
+  command "yum -y install --enablerepo=remi --enablerepo=remi-php56 php php-mbstring php-gd php-mcrypt php-mysqlnd php-pear php-xml php-pecl-xdebug php-opcache"
 end
 
 template "/etc/php.ini" do
@@ -44,7 +43,7 @@ template "/etc/php.ini" do
   notifies :restart, "service[httpd]"
 end
 
-template "/etc/php.d/xdebug.ini" do
+template "/etc/php.d/15-xdebug.ini" do
   source "xdebug.ini.erb"
   mode "0644"
   notifies :restart, "service[httpd]"
