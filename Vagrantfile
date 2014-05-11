@@ -38,7 +38,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Mount the parent directory at /mnt/fuelphp
   config.vm.synced_folder "../", "/mnt/fuelphp",
     :owner => "vagrant", :group => "vagrant",
-    :mount_options => ["dmode=777,fmode=666"]
+    :mount_options => ["dmode=777,fmode=777"]
   # Speed up with NFS. nfsd is needed on Host OS
   #config.vm.synced_folder "../", "/mnt/fuelphp", :nfs => true
 
