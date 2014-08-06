@@ -56,11 +56,11 @@ end
 
 # install composer
 execute "install composer" do
-  command <<-EOH
+  command <<-EOL
     curl -sS https://getcomposer.org/installer | php
     mv composer.phar /usr/local/bin/composer
     chown vagrant.vagrant /usr/local/bin/composer
-  EOH
+  EOL
   user "root"
   not_if { File.exists?("/usr/local/bin/composer") }
 end
@@ -132,7 +132,13 @@ end
 
 # install FuelPHP if not exists
 execute "install fuelphp" do
-  command "cd /home/vagrant && oil create fuel.tmp && mv fuel.tmp/* fuelphp && mv fuel.tmp/.git* fuelphp && rmdir fuel.tmp"
+  command <<-EOL
+    cd /home/vagrant
+    oil create fuel.tmp
+    shopt -s dotglob
+    mv fuel.tmp/* fuelphp
+    rmdir fuel.tmp
+  EOL
   user "vagrant"
   not_if { File.exists?("/home/vagrant/fuelphp/oil") }
 end
