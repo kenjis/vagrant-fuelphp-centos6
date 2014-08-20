@@ -79,6 +79,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
  
   #   # You may also specify custom JSON attributes:
      chef.json = {
+        "yum" => {
+            "ius_release" => "1.0-13"
+        },
         "php55" => {
             "date.timezone" => "Asia/Tokyo"
         },
