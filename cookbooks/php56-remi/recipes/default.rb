@@ -29,6 +29,7 @@ execute "remove php packages" do
   command <<-EOL
     yum -y erase php54-*
     yum -y erase php55u-*
+    yum -y erase php-*
   EOL
 end
 
