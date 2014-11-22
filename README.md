@@ -55,12 +55,15 @@ Setup your directories something like this:
 
 ### Vagrant
 
-Here are a few common commands:
+Here are common commands:
 
 * `vagrant up` starts the virtual machine and provisions it
 * `vagrant suspend` will save the current running state of the machine and stop it
 * `vagrant halt` attempts a graceful shutdown of the machine
 * `vagrant ssh` gives you SSH access to the virtual machine
+* `vagrant destroy` destoies the machie
+* `vagrant status` shows status of the machine
+* `vagrant global-status` shows status of all virtual machines
 
 More in http://docs.vagrantup.com/v2/
 

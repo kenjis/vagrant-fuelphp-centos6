@@ -59,6 +59,9 @@ vagrant-fuelphp-centos6をあなたのプロジェクトに追加します:
 * `vagrant suspend` 仮想マシンの状態を保存して停止します
 * `vagrant halt` 仮想マシンを停止 (シャットダウン) します
 * `vagrant ssh` 仮想マシンへのSSHアクセスを提供します
+* `vagrant destroy` 仮想マシンを破棄します
+* `vagrant status` 仮想マシンの状態を表示します
+* `vagrant global-status` すべての仮想マシンの状態を表示します
 
 もっと知りたい場合は、http://docs.vagrantup.com/v2/
 
