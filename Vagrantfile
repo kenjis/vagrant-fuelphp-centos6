@@ -80,6 +80,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
      chef.add_recipe "fuelphp"
 
+     chef.add_recipe "mongodb"
+
   #   # You may also specify custom JSON attributes:
      chef.json = {
         "yum" => {
