@@ -13,7 +13,7 @@ This project sets up a CentOS 6.5 (64bit) virtual machine to run your FuelPHP pr
 ### Tested
 
 * Ubuntu 12.04 - VirtualBox 4.3.10 & Vagrant 1.5.4 & Git 1.7.9.5
-* Mac OS X 10.8.5 - VirtualBox 4.3.10 & Vagrant 1.6.3 & Git 1.8.4.2
+* Mac OS X 10.10.1 - VirtualBox 4.3.18 & Vagrant 1.6.5 & Git 1.9.3
 
 ## What's in the Development environment?
 
@@ -24,7 +24,7 @@ Some of the following are including using Chef Opscode repositories.
   * vhost setup for your project
 * MySQL 5.1
   * **fuel_dev** and **fuel_test** databases
-* phpMyAdmin 3.5
+* phpMyAdmin 4.0
 * PHPUnit 3.7
 * Git 1.7.1
 

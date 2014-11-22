@@ -64,22 +64,26 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :chef_solo do |chef|
      chef.cookbooks_path = "./cookbooks"
 
-     # PHP 5.5 for production
-     chef.add_recipe "yum::ius"
-     chef.add_recipe "php55"
-     #chef.add_recipe "php54"
-
-     # PHP 5.6 for testing
-     #chef.add_recipe "yum-remi"
-     #chef.add_recipe "php56-remi"
-
      chef.add_recipe "mysql::server"
-     chef.add_recipe "phpmyadmin"
+
+     # remi
+     chef.add_recipe "yum-remi"
+     chef.add_recipe "php55-remi"
+     #chef.add_recipe "php56-remi"
+     chef.add_recipe "phpmyadmin-remi"
+
+     # ius
+     #chef.add_recipe "yum::ius"
+     #chef.add_recipe "php55-ius"
+     #chef.add_recipe "php54-ius"
+     #chef.add_recipe "phpmyadmin"
+
      chef.add_recipe "fuelphp"
- 
+
   #   # You may also specify custom JSON attributes:
      chef.json = {
         "yum" => {
+            "remi-repo" => "remi-php55",
             "ius_release" => "1.0-13"
         },
         "php55" => {
