@@ -61,7 +61,7 @@ Here are common commands:
 * `vagrant suspend` will save the current running state of the machine and stop it
 * `vagrant halt` attempts a graceful shutdown of the machine
 * `vagrant ssh` gives you SSH access to the virtual machine
-* `vagrant destroy` destoies the machine
+* `vagrant destroy` will destroy the machine
 * `vagrant status` shows status of the machine
 * `vagrant global-status` shows status of all virtual machines
 
