@@ -35,7 +35,7 @@ end
 
 execute "install php56-remi" do
   user "root"
-  command "yum -y install --enablerepo=remi --enablerepo=remi-php56 php php-mbstring php-gd php-mcrypt php-mysqlnd php-pear php-xml php-pecl-xdebug php-opcache"
+  command "yum -y install --enablerepo=remi --enablerepo=remi-php56 php php-mbstring php-gd php-mcrypt php-mysqlnd php-pear php-xml php-pecl-xdebug php-opcache php-pecl-apcu"
 end
 
 template "/etc/php.ini" do
