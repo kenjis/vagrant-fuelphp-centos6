@@ -40,9 +40,10 @@ Add this vagrant-fuelphp-centos6 to your project:
 Setup your directories something like this:
 
 	project/
-	project/fuel
-	project/public/
-	project/vagrant/
+	├── docs/
+	├── fuel/
+	├── public/
+	└── vagrant/
 
 ## Accessing your project
 

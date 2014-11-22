@@ -38,9 +38,10 @@ vagrant-fuelphp-centos6をあなたのプロジェクトに追加します:
 ディレクトリ構成は以下のようになります:
 
 	project/
-	project/fuel
-	project/public/
-	project/vagrant/
+	├── docs/
+	├── fuel/
+	├── public/
+	└── vagrant/
 
 ## FuelPHPプロジェクトへのアクセス方法
 
