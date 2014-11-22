@@ -12,7 +12,7 @@ This project sets up a CentOS 6.5 (64bit) virtual machine to run your FuelPHP pr
 
 ### Tested
 
-* Ubuntu 12.04 - VirtualBox 4.3.10 & Vagrant 1.5.4 & Git 1.7.9.5
+* Ubuntu 14.04     - VirtualBox 4.3.18 & Vagrant 1.6.5 & Git 1.9.1
 * Mac OS X 10.10.1 - VirtualBox 4.3.18 & Vagrant 1.6.5 & Git 1.9.3
 
 ## What's in the Development environment?
