@@ -1,1 +1,1 @@
-default['php56']['date.timezone'] = 'Asia/Tokyo'
+default['php']['date.timezone'] = 'Asia/Tokyo'

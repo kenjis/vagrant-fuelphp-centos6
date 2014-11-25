@@ -93,7 +93,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             #"remi-repo" => "remi-php56",
             "ius_release" => "1.0-13"
         },
-        "php55" => {
+        "php" => {
             "date.timezone" => "Asia/Tokyo"
         },
         "mysql" => {
