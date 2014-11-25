@@ -125,11 +125,6 @@ execute "remount /mnt/fuelphp for changing permission" do
   user "root"
 end
 
-#execute "yum update" do
-#  user "root"
-#  command "yum -y update"
-#end
-
 # install FuelPHP if not exists
 execute "install fuelphp" do
   command <<-EOL

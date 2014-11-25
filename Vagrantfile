@@ -65,6 +65,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
      chef.cookbooks_path = "./cookbooks"
 
      chef.add_recipe "mysql::server"
+     chef.add_recipe "mongodb"
+     chef.add_recipe "redis"
 
      # remi
      chef.add_recipe "yum-remi"
@@ -80,8 +82,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
      chef.add_recipe "fuelphp"
 
-     chef.add_recipe "mongodb"
-     chef.add_recipe "redis"
+     #chef.add_recipe "phalcon"
+
+     #chef.add_recipe "yum-update"
 
   #   # You may also specify custom JSON attributes:
      chef.json = {
