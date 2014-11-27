@@ -24,22 +24,61 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
-execute "install dev tools for compiling phalcon" do
+execute "install build tools for compiling phalcon" do
   user "root"
   command <<-EOL
-    yum install -y --enablerepo=remi,remi-php55 php-devel php-mysql gcc libtool
+    yum install -y --enablerepo=remi,remi-php55 php-devel php-mysql gcc libtool re2c
   EOL
 end
 
-execute "compile phalcon" do
+execute "compile phalcon1" do
   user "root"
   command <<-EOL
     rm -rf cphalcon
     git clone --depth=1 git://github.com/phalcon/cphalcon.git
     cd cphalcon/build
     ./install
+    cp -p /usr/lib64/php/modules/phalcon.so /usr/lib64/php/modules/phalcon.so.1
   EOL
-  not_if { File.exists?("/usr/lib64/php/modules/phalcon.so") }
+  not_if { File.exists?("/usr/lib64/php/modules/phalcon.so.1") }
+end
+
+execute "compile phalcon2" do
+  user "root"
+  command <<-EOL
+    rm -rf json-c
+    git clone https://github.com/json-c/json-c.git
+    cd json-c
+    sh autogen.sh
+    ./configure
+    make
+    make install
+    cd ..
+
+    rm -rf zephir
+    git clone https://github.com/phalcon/zephir.git
+    cd zephir
+    ./install
+    cd ..
+
+    rm -rf cphalcon
+    git clone -b 2.0.0 --depth=1 https://github.com/phalcon/cphalcon.git
+    cd cphalcon
+    cp -p /etc/php.ini /etc/php.ini.backup_for_compiling_cphalcon2
+    sed -i -e "s/memory_limit = .*M/memory_limit = 256M/" /etc/php.ini
+    ../zephir/bin/zephir build
+    cp -p /usr/lib64/php/modules/phalcon.so /usr/lib64/php/modules/phalcon.so.2
+    mv /etc/php.ini.backup_for_compiling_cphalcon2 /etc/php.ini
+  EOL
+  not_if { File.exists?("/usr/lib64/php/modules/phalcon.so.2") }
+end
+
+execute "install phalcon1" do
+  user "root"
+  command <<-EOL
+    rm -f /usr/lib64/php/modules/phalcon.so
+    ln -s /usr/lib64/php/modules/phalcon.so.1 /usr/lib64/php/modules/phalcon.so
+  EOL
 end
 
 template "/etc/php.d/phalcon.ini" do
