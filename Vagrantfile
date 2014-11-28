@@ -68,8 +68,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
      chef.add_recipe "git"
 
      chef.add_recipe "mysql::server"
-     chef.add_recipe "mongodb"
-     chef.add_recipe "redis"
      #chef.add_recipe "beanstalkd"
 
      # remi
@@ -83,6 +81,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
      #chef.add_recipe "php55-ius"
      #chef.add_recipe "php54-ius"
      #chef.add_recipe "phpmyadmin"
+
+     chef.add_recipe "mongodb"
+     chef.add_recipe "redis"
 
      chef.add_recipe "phpunit"
      chef.add_recipe "fuelphp"
