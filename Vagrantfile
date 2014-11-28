@@ -64,12 +64,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :chef_solo do |chef|
      chef.cookbooks_path = "./cookbooks"
 
-     chef.add_recipe "iptabels"
+     chef.add_recipe "iptables"
      chef.add_recipe "git"
 
      chef.add_recipe "mysql::server"
      chef.add_recipe "mongodb"
      chef.add_recipe "redis"
+     #chef.add_recipe "beanstalkd"
 
      # remi
      chef.add_recipe "yum-remi"
