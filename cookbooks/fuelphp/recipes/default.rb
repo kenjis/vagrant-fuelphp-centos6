@@ -24,10 +24,6 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
-service "iptables" do
-  action [:stop, :disable]
-end
-
 service "httpd" do
   supports :status => true, :restart => true, :reload => true
   action [:enable, :start]
@@ -39,57 +35,10 @@ template "/etc/httpd/conf.d/fuelphp.conf" do
   notifies :restart, "service[httpd]"
 end
 
-# install git
-yum_package "git" do
-  action :install
-end
-
-yum_package "bash-completion" do
-  action :install
-end
-
 # install oil command
 execute "install fuelphp oil command" do
   command "curl get.fuelphp.com/oil | sh"
   user "root"
-end
-
-# install composer
-execute "install composer" do
-  command <<-EOL
-    curl -sS https://getcomposer.org/installer | php
-    mv composer.phar /usr/local/bin/composer
-    chown vagrant.vagrant /usr/local/bin/composer
-  EOL
-  user "root"
-  not_if { File.exists?("/usr/local/bin/composer") }
-end
-
-# install phpunit
-execute "install phpunit" do
-  # FIXME
-  # command "composer global require 'phpunit/phpunit=3.7.*'"
-  # does not work. The below error occurs.
-  #   STDERR: [ErrorException]
-  #   chdir(): No such file or directory (errno 2)
-  command <<-EOL
-    mkdir -p /home/vagrant/.composer
-    cd /home/vagrant/.composer
-    composer require 'phpunit/phpunit=3.7.*'
-  EOL
-  user "vagrant"
-  not_if { File.exists?("/home/vagrant/.composer/vendor/bin/phpunit") }
-end
-
-# set composer path
-execute "set global composer bin path" do
-  command <<-EOL
-    sed -i -e '/\.composer/d' /home/vagrant/.bash_profile
-    sed -i -e '/export PATH/d' /home/vagrant/.bash_profile
-    echo 'PATH="$HOME/.composer/vendor/bin:$PATH"' >>/home/vagrant/.bash_profile
-    echo 'export PATH' >>/home/vagrant/.bash_profile
-  EOL
-  user "vagrant"
 end
 
 # create the databases
