@@ -65,10 +65,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
      chef.cookbooks_path = "./cookbooks"
 
      chef.add_recipe "iptables"
-     chef.add_recipe "git"
-
      chef.add_recipe "mysql::server"
-     #chef.add_recipe "beanstalkd"
 
      # remi
      chef.add_recipe "yum-remi"
@@ -81,6 +78,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
      #chef.add_recipe "php55-ius"
      #chef.add_recipe "php54-ius"
      #chef.add_recipe "phpmyadmin"
+
+     chef.add_recipe "git"
+     #chef.add_recipe "beanstalkd"
 
      chef.add_recipe "mongodb"
      chef.add_recipe "redis"
