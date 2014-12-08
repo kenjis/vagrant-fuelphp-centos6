@@ -1,5 +1,7 @@
 # FuelPHP Vagrant Development setup (CentOS6)
 
+**このリポジトリは保守されていますが、積極的には開発されていません。新しい Vagrant CentOS6 PHP リポジトリを作成しました。[vagrant-centos6-php](https://github.com/kenjis/vagrant-centos6-php)を参照してください。**
+
 このプロジェクトは、あなたのFuelPHPプロジェクトを含むCentOS 6.5 (64bit) 仮想マシンをセットアップします。FuelPHPプロジェクトのディレクトリを仮想マシンからマウントするため、ホスト側でお好みのエディタを使って作業できます。
 
 ## 必要なソフトウェア

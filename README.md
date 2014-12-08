@@ -2,6 +2,8 @@
 
 [日本語](README.ja.md)
 
+**This repositoy is still maintained but not actively developed. I've created new Vagrant CentOS6 PHP repositoy. See [vagrant-centos6-php](https://github.com/kenjis/vagrant-centos6-php).**
+
 This project sets up a CentOS 6.5 (64bit) virtual machine to run your FuelPHP project in.  It mounts your FuelPHP project directory so that you can use your favorite editors to work.
 
 ## Requirements
