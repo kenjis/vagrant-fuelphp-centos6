@@ -28,6 +28,9 @@
 * phpMyAdmin 4.0
 * PHPUnit 3.7
 * Git 1.7.1
+
+(オプション)
+
 * MongoDB 2.6
 * Redis 2.4
 

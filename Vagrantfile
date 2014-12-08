@@ -82,13 +82,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
      chef.add_recipe "git"
      #chef.add_recipe "beanstalkd"
 
-     chef.add_recipe "mongodb"
-     chef.add_recipe "redis"
-
      chef.add_recipe "phpunit"
      chef.add_recipe "fuelphp"
-     #chef.add_recipe "phalcon"
 
+     #chef.add_recipe "mongodb"
+     #chef.add_recipe "redis"
      #chef.add_recipe "yum-update"
 
   #   # You may also specify custom JSON attributes:

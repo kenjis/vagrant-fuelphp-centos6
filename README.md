@@ -30,6 +30,9 @@ Some of the following are including using Chef Opscode repositories.
 * phpMyAdmin 4.0
 * PHPUnit 3.7
 * Git 1.7.1
+
+(Optional)
+
 * MongoDB 2.6
 * Redis 2.4
 
